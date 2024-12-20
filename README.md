@@ -15,24 +15,22 @@ This project demonstrates deploying **MongoDB** and **Mongo Express** to a local
 ## Steps to Deploy MongoDB and Mongo Express
 
 ### 1. Set Up Minikube
-1. Install Minikube. 
-Start Minikube with Docker as the driver:
-minikube start --driver=docker
-Verify Minikube status:
-minikube status
+- Install Minikube. 
+- Start Minikube with Docker as the driver: 'minikube start --driver=docker'
+- Verify Minikube status: 'minikube status'
 Note: kubectl is installed as a dependency during Minikube installation.
 
 ### 2. Deploy MongoDB
-Create a Secret for the MongoDB username and password.
-Deploy MongoDB using a Kubernetes Deployment. The credentials will be sourced from the created Secret.
-Expose MongoDB via an internal ClusterIP Service.
+- Create a Secret for the MongoDB username and password.
+- Deploy MongoDB using a Kubernetes Deployment. The credentials will be sourced from the created Secret.
+- Expose MongoDB via an internal ClusterIP Service.
 
 ### 3. Deploy Mongo Express
-Create a ConfigMap to store MongoDB connection details.
-Deploy Mongo Express as a Kubernetes Deployment, using:
-Secrets for the MongoDB username and password.
-ConfigMap for the MongoDB service URL.
-Expose Mongo Express via an external LoadBalancer Service.
+- Create a ConfigMap to store MongoDB connection details.
+- Deploy Mongo Express as a Kubernetes Deployment, using:
+  - Secrets for the MongoDB username and password.
+  - ConfigMap for the MongoDB service URL.
+- Expose Mongo Express via an external LoadBalancer Service.
 
 ### 4. Access Mongo Express
 Since Minikube does not support external LoadBalancers, run the following to assign an accessible IP:
